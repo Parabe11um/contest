@@ -20,29 +20,14 @@ if (empty($_POST["email"])) {
 if (empty($_POST["phone"])) {
     $errorMSG .= "Укажите свой номер телефона";
 } else {
-    $message = $_POST["phone"];
+    $phone = $_POST["phone"];
 }
 
 // ADDRESS
 if (empty($_POST["address"])) {
     $errorMSG .= "Укажите адрес где вы нашли сердце";
 } else {
-    $message = $_POST["address"];
-}
-
-// POLICY
-if ($_POST["address"]) {
-    $errorMSG .= "Согласие обязательно";
-} else {
-    $message = $_POST["policy"];
-}
-
-
-// RULES
-if ($_POST["address"]) {
-    $errorMSG .= "Согласие обязательно";
-} else {
-    $message = $_POST["rules"];
+    $address = $_POST["address"];
 }
 
 
@@ -51,7 +36,7 @@ $Subject = "Регистрация нового уастника конкурс�
 
 // prepare email body text
 $Body = "";
-$Body .= "Name: ";
+$Body .= "Имя: ";
 $Body .= $name;
 $Body .= "\n";
 $Body .= "Email: ";
@@ -60,19 +45,20 @@ $Body .= "\n";
 $Body .= "Номер телефона: ";
 $Body .= $phone;
 $Body .= "\n";
-$Body .= "Номер телефона: ";
+$Body .= "Адрес, где нашли: ";
 $Body .= $address;
 $Body .= "\n";
 
 // send email
-$success = mail($EmailTo, $Subject, $Body, "From:".$email);
+
+$success = mail($EmailTo, $Subject, $Body, "From:".$EmailTo);
 
 // redirect to success page
 if ($success && $errorMSG == ""){
    echo "success";
 }else{
     if($errorMSG == ""){
-        echo "Something went wrong :(";
+        echo "Ошибка отправки формы";
     } else {
         echo $errorMSG;
     }

@@ -24,28 +24,26 @@
             <div class="col-sm-12">
                 <div >
                     <h3>Заполните все поля и отправьте заявку на победу!</h3>
-                    <form autocomplete="false" role="form" id="contactForm" data-toggle="validator" class="contest-form shake">
+                    <form role="form" id="contactForm" data-toggle="validator" class="contest-form shake">
                         <div class="row personal">
                             <div class="form-group col-sm-4">
                                 <label for="name" class="h4">ФИО</label>
-                                <input autocomplete="false" type="text" class="form-control" id="name" placeholder="Укажите ФИО" required>
+                                <input type="text" class="form-control" id="name" placeholder="Укажите ФИО" required>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group col-sm-4">
                                 <label for="email" class="h4">Email</label>
-                                <input autocomplete="false" type="email" class="form-control" id="email" placeholder="Введите email" required>
+                                <input type="email" class="form-control" id="email" placeholder="Введите email" required>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group col-sm-4">
                                 <label for="phone" class="h4">Номер телефона</label>
-                                <input autocomplete="false" type="text" class="form-control" id="phone" placeholder="Введите номер телефона" required>
+                                <input type="text" class="form-control" id="phone" placeholder="Введите номер телефона" required>
                                 <div class="help-block with-errors"></div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="form-group col-sm-12">
-                                <label for="address" class="h4">Адрес</label>
-                                <input type="text" class="form-control" id="address" placeholder="Укажите адрес где вы нашли сердце" required>
+                                <label for="address" class="h4">Адрес, где вы нашли сердце</label>
+                                <input type="text" class="form-control" id="address" placeholder="Укажите адрес" required>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-sm-12 custom-control custom-checkbox">
@@ -54,7 +52,7 @@
                             </div>
                             <div class="col-sm-12 custom-control  custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="policy" required>
-                                <label class="custom-control-label" for="policy"> Я ознакомился с <a class="doc-link" href="" target="_blank">правилами</a> проведения конкурса.</label>
+                                <label class="custom-control-label" for="policy"> Я ознакомился с <a class="doc-link" href="/docs/contest.pdf" target="_blank">правилами</a> проведения конкурса.</label>
                             </div>
                         </div>
                         <button type="submit" id="form-submit" class="button">Отправить</button>

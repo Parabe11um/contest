@@ -1,10 +1,18 @@
 let $form = $("#contactForm");
 let $address = $("#address");
+$name = $("#name");
 
+$name.suggestions({
+    token: "b0b38328e16af8e0a929aa6ea19caf1ee6a5656f",
+    type: "NAME",
 
+    onSelect: function(suggestion) {
+        // console.log(suggestion);
+    }
+});
 
 $address.suggestions({
-    token: "0724ee8967e8155974ef623a1e2f5b6e96d35253",
+    token: "b0b38328e16af8e0a929aa6ea19caf1ee6a5656f",
     type: "ADDRESS",
 
     onSelect: function(suggestion) {
@@ -18,7 +26,7 @@ $form.validator().on("submit", function (event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
         formError();
-        submitMSG(false, "Заполните пожалуйста все поля корректно");
+        submitMSG(false, "Заполните пожалуйста все поля и подтвердите согласие");
     } else {
         // everything looks good!
         event.preventDefault();
@@ -33,13 +41,11 @@ function submitForm(){
     var email = $("#email").val();
     var phone = $("#phone").val();
     var address = $("#address").val();
-    var policy = $("#address").val();
-    var rules = $("#address").val();
 
     $.ajax({
         type: "POST",
         url: "php/form-process.php",
-        data: "name=" + name + "&email=" + email + "&phone=" + phone + "&address=" + address + policy + rules,
+        data: "name=" + name + "&email=" + email + "&phone=" + phone + "&address=" + address,
         success : function(text){
             if (text == "success"){
                 formSuccess();
