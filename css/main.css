@@ -1,0 +1,102 @@
+.contest-form{
+    width: 100%;
+}
+
+.top-header{
+    text-align: center;
+    background-image: linear-gradient(90deg,#ef891c 0,#ef6b1c);
+    color: #fff;
+    /*color: #fff;*/
+    /*background-image: url('../img/win.png');*/
+    /*background-size: cover;*/
+    /*height: 100vh;*/
+}
+
+.contest-form{
+    padding: 40px;
+}
+
+.personal{
+    margin-top: 40px;
+}
+
+h3{
+    text-align: center;
+}
+
+input:focus{
+    border: 1px solid #ef891c!important;
+}
+
+.button{
+    margin-top: 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none!important;
+    line-height: 1;
+    border: 1px solid #ef891c;
+    background-color: #ef891c;
+    padding: 18px 30px 17px;
+    border-radius: 30px;
+    letter-spacing: .06em;
+    transition: color .2s,background-color .2s;
+    background-image: linear-gradient(90deg,#ef891c 0,#ef6b1c);
+    color: #fff!important;
+    outline: none;
+}
+
+.button:hover{
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none!important;
+    line-height: 1;
+    border: 1px solid #ef891c;
+    outline: none;
+    background: none;
+    color: #252525!important;
+    transition: color .2s,background-color .2s;
+}
+
+.doc-link{
+    color: #ef891c;
+    text-decoration: dotted;
+}
+
+.doc-link:hover{
+    text-decoration: none;
+    color: #ef891c;
+}
+
+
+#msgSubmit{
+    color: #ef891c;
+}
+
+
+
+
+
+
+
+.custom-control-input:focus~.custom-control-label::before {
+    border-color: #28a745 !important;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+}
+
+.form-control{
+    height: 60px;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    border-color: #28a745 !important;
+    background-color: #28a745 !important;
+}
+
+.custom-control-input:focus:not(:checked)~.custom-control-label::before {
+    border-color: #5bd778 !important;
+}
+
+.custom-control-input:not(:disabled):active~.custom-control-label::before {
+    background-color: #d6f5dd !important;
+    border-color: #d6f5dd !important;
+}

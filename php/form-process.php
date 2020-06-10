@@ -4,28 +4,50 @@ $errorMSG = "";
 
 // NAME
 if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
+    $errorMSG = "Введите ФИО";
 } else {
     $name = $_POST["name"];
 }
 
 // EMAIL
 if (empty($_POST["email"])) {
-    $errorMSG .= "Email is required ";
+    $errorMSG .= "Введите email";
 } else {
     $email = $_POST["email"];
 }
 
-// MESSAGE
-if (empty($_POST["message"])) {
-    $errorMSG .= "Message is required ";
+// PHONE
+if (empty($_POST["phone"])) {
+    $errorMSG .= "Укажите свой номер телефона";
 } else {
-    $message = $_POST["message"];
+    $message = $_POST["phone"];
+}
+
+// ADDRESS
+if (empty($_POST["address"])) {
+    $errorMSG .= "Укажите адрес где вы нашли сердце";
+} else {
+    $message = $_POST["address"];
+}
+
+// POLICY
+if ($_POST["address"]) {
+    $errorMSG .= "Согласие обязательно";
+} else {
+    $message = $_POST["policy"];
 }
 
 
-$EmailTo = "emailaddress@test.com";
-$Subject = "New Message Received";
+// RULES
+if ($_POST["address"]) {
+    $errorMSG .= "Согласие обязательно";
+} else {
+    $message = $_POST["rules"];
+}
+
+
+$EmailTo = "r.a.bazhenoff@gmail.com";
+$Subject = "Регистрация нового уастника конкурса!";
 
 // prepare email body text
 $Body = "";
@@ -35,8 +57,11 @@ $Body .= "\n";
 $Body .= "Email: ";
 $Body .= $email;
 $Body .= "\n";
-$Body .= "Message: ";
-$Body .= $message;
+$Body .= "Номер телефона: ";
+$Body .= $phone;
+$Body .= "\n";
+$Body .= "Номер телефона: ";
+$Body .= $address;
 $Body .= "\n";
 
 // send email
@@ -52,5 +77,3 @@ if ($success && $errorMSG == ""){
         echo $errorMSG;
     }
 }
-
-?>

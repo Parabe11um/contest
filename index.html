@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Конкурс Согласие - Большое сердце Согласия</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@19.8.0/dist/css/suggestions.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="jumbotron top-header">
+    <div class="container">
+        <h1 class="display-4">Поздравляем!</h1>
+        <p class="lead">Вы нашли Большое сердце Согласия! </p>
+        <p class="lead">Для того, чтобы стать участником розыгрыша, заполните поля ниже!</p>
+    </div>
+</div>
+<div class="content-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div >
+                    <h3>Заполните все поля и отправьте заявку на победу!</h3>
+                    <form autocomplete="false" role="form" id="contactForm" data-toggle="validator" class="contest-form shake">
+                        <div class="row personal">
+                            <div class="form-group col-sm-4">
+                                <label for="name" class="h4">ФИО</label>
+                                <input autocomplete="false" type="text" class="form-control" id="name" placeholder="Укажите ФИО" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="email" class="h4">Email</label>
+                                <input autocomplete="false" type="email" class="form-control" id="email" placeholder="Введите email" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="phone" class="h4">Номер телефона</label>
+                                <input autocomplete="false" type="text" class="form-control" id="phone" placeholder="Введите номер телефона" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label for="address" class="h4">Адрес</label>
+                                <input type="text" class="form-control" id="address" placeholder="Укажите адрес где вы нашли сердце" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="rules" required>
+                                <label class="custom-control-label" for="rules"> Я согласен на <a class="doc-link" href="https://www.soglasie.ru/upload/Terms_of_use.pdf" target="_blank">обработку</a> персональных данных.</label>
+                            </div>
+                            <div class="col-sm-12 custom-control  custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="policy" required>
+                                <label class="custom-control-label" for="policy"> Я ознакомился с <a class="doc-link" href="" target="_blank">правилами</a> проведения конкурса.</label>
+                            </div>
+                        </div>
+                        <button type="submit" id="form-submit" class="button">Отправить</button>
+                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://unpkg.com/imask"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/validator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@19.8.0/dist/js/jquery.suggestions.min.js"></script>
+<script type="text/javascript" src="js/form-scripts.js"></script>
+</html>

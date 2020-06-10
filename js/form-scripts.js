@@ -1,8 +1,24 @@
-$("#contactForm").validator().on("submit", function (event) {
+let $form = $("#contactForm");
+let $address = $("#address");
+
+
+
+$address.suggestions({
+    token: "0724ee8967e8155974ef623a1e2f5b6e96d35253",
+    type: "ADDRESS",
+
+    onSelect: function(suggestion) {
+        // console.log(suggestion);
+    }
+});
+
+
+
+$form.validator().on("submit", function (event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
         formError();
-        submitMSG(false, "Did you fill in the form properly?");
+        submitMSG(false, "Заполните пожалуйста все поля корректно");
     } else {
         // everything looks good!
         event.preventDefault();
@@ -15,12 +31,15 @@ function submitForm(){
     // Initiate Variables With Form Content
     var name = $("#name").val();
     var email = $("#email").val();
-    var message = $("#message").val();
+    var phone = $("#phone").val();
+    var address = $("#address").val();
+    var policy = $("#address").val();
+    var rules = $("#address").val();
 
     $.ajax({
         type: "POST",
         url: "php/form-process.php",
-        data: "name=" + name + "&email=" + email + "&message=" + message,
+        data: "name=" + name + "&email=" + email + "&phone=" + phone + "&address=" + address + policy + rules,
         success : function(text){
             if (text == "success"){
                 formSuccess();
@@ -34,7 +53,7 @@ function submitForm(){
 
 function formSuccess(){
     $("#contactForm")[0].reset();
-    submitMSG(true, "Message Submitted!")
+    submitMSG(true, "Ваша заявка принята!")
 }
 
 function formError(){
@@ -51,3 +70,8 @@ function submitMSG(valid, msg){
     }
     $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 }
+
+var phoneMask = IMask(
+document.getElementById('phone'), {
+    mask: '+{7}(000)000-00-00'
+});
